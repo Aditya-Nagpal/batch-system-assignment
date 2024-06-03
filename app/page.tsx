@@ -1,7 +1,8 @@
-import React from "react";
+'use client'
+import React,{useEffect} from "react";
 import Header from "./components/Header";
 import Front from "./components/Front";
-import Features from "./components/Features";
+import Features from "./components/Features"
 import Advantages from "./components/Advantages";
 import Testimonial from "./components/Testimonial";
 import FAQ from "./components/FAQ";

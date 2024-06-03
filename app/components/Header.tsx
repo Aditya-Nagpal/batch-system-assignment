@@ -1,13 +1,30 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import fire from '../assets/images/fire.png'
 import ulfry from '../assets/images/ulfry logo.png'
 import Image from 'next/image'
 import '../assets/css/clash-display.css'
-import Link from 'next/link'
 
 export default function Header() {
+  const [fh,setFh]=useState<number | undefined>(0);
+  useEffect(() => {
+    window.scrollTo(0,0);
+    const h=document.getElementById('features')?.getBoundingClientRect().top;
+    setFh(h);
+  },[]);
+
+  const scrollF=() => {
+    if(fh != undefined){
+      const timer=setInterval(() => {
+        window.scrollBy(0,5);
+        if(window.scrollY >= fh){
+          clearTimeout(timer);
+        }
+      },5);
+    }
+  };
+
   return (
     <Container>
       <section>
@@ -20,7 +37,7 @@ export default function Header() {
           <li><a href='/'>home</a></li>
           <li><a href='/about-us'>about us</a></li>
           <li><a href='/pricing'>pricing</a></li>
-          <li><Link href='#features'>features</Link></li>
+          <li onClick={scrollF}>features</li>
         </ul>
       </section>
       <section>
@@ -31,6 +48,8 @@ export default function Header() {
 }
 
 const Container=styled.div`
+  position: relative;
+  z-index: 1;
   width: 78.125%;
   margin: 40px auto 0;
   display: flex;
