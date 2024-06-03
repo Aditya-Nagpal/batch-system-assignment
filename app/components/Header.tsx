@@ -5,6 +5,7 @@ import fire from '../assets/images/fire.png'
 import ulfry from '../assets/images/ulfry logo.png'
 import Image from 'next/image'
 import '../assets/css/clash-display.css'
+import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -19,7 +20,7 @@ export default function Header() {
           <li><a href='/'>home</a></li>
           <li><a href='/about-us'>about us</a></li>
           <li><a href='/pricing'>pricing</a></li>
-          <li><a href='/features'>features</a></li>
+          <li><Link href='#features'>features</Link></li>
         </ul>
       </section>
       <section>

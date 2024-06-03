@@ -6,6 +6,7 @@ import Image from 'next/image'
 import bell from '../assets/images/bell.png'
 import ai2 from '../assets/images/adv-img-2.png'
 import star2 from '../assets/images/star2.png'
+import Link from 'next/link'
 
 export default function Advantages() {
   return (

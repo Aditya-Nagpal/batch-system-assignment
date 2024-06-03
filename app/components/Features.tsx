@@ -10,7 +10,7 @@ import cube3 from '../assets/images/cube-04.png'
 
 export default function Features() {
   return (
-    <Container>
+    <Container id='features'>
         <Image src={fi} alt='fi' height={719.49} width={719.49} />
         <div>
             <p className='small-h'>features</p>
